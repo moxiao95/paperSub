@@ -4,7 +4,11 @@
         <div class="login-contnet">
             <div class="content-left"></div>
             <div class="content-right">
-                
+                <header class="conter-head">毕业论文与答辩管理系统</header>
+                <div class="content-select">
+                    <el-radio v-model="loginRadio" label="1">学生登录</el-radio>
+                    <el-radio v-model="loginRadio" label="2">老师登录</el-radio>
+                </div>
             </div>
         </div>
         <div class="login-bottom"></div>
@@ -15,7 +19,7 @@
 export default {
     data() {
         return {
-
+            loginRadio: '1',
         };
     },
 
@@ -58,7 +62,25 @@ export default {
             }
 
             .content-right {
+                float: left;
+                width: 370px;
+                height: 400px;
 
+                .conter-head {
+                    height: 70px;
+                    font: bold 20px/70px "微软雅黑";
+                    text-align: center;
+                    background: #eee;
+                    border-radius: 0 10px 0 0;
+                    color: #1369d7;
+                    border-bottom: 1px solid #dadada;
+                }
+
+                .content-select {
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                }
             }
         }
 
