@@ -1,13 +1,41 @@
 <template>
-    <div id="login">
+    <div
+        id="login"
+        v-loading="loadingState"
+        element-loading-text="正在验证中"
+        element-loading-spinner="el-icon-loading"
+        element-loading-background="rgba(0, 0, 0, 0.8)"
+    >
         <div class="login-top"></div>
         <div class="login-contnet">
             <div class="content-left"></div>
             <div class="content-right">
                 <header class="conter-head">毕业论文与答辩管理系统</header>
-                <div class="content-select">
-                    <el-radio v-model="loginRadio" label="1">学生登录</el-radio>
-                    <el-radio v-model="loginRadio" label="2">老师登录</el-radio>
+                <div class="content-box">
+                    <div class="content-user">
+                        <span class="user-img"></span>
+                        <el-input
+                            v-model="userInput"
+                            placeholder="请输入学号"
+                            class="content-input"
+                        ></el-input>
+                    </div>
+                    <div class="content-password">
+                        <span class="password-img"></span>
+                        <el-input
+                            v-model="passwordInput"
+                            placeholder="请输入密码"
+                            show-password
+                            class="content-input"
+                        ></el-input>
+                    </div>
+                </div>
+                <div class="content-btn">
+                    <el-button
+                        type="primary"
+                        class="btn-login"
+                        @click="toLogin"
+                    >登录</el-button>
                 </div>
             </div>
         </div>
@@ -19,14 +47,30 @@
 export default {
     data() {
         return {
-            loginRadio: '1',
+            userInput: '',
+            passwordInput: '',
+            loadingState: false,
         };
     },
 
     methods: {
-
+        toLogin() {
+            this.loadingState = true;
+            if (this.userInput === '') {
+                this.loadingState = false;
+                this.$message.error('用户名不能为空');
+                return;
+            } else if (this.passwordInput === '') {
+                this.loadingState = false;
+                this.$message.error('密码不能为空');
+                return;
+            }
+            localStorage.setItem('cookies', this.userInput);
+            this.loadingState = false;
+            this.$router.push('/home');
+        },
     },
-}
+};
 </script>
 
 <style lang="scss">
@@ -76,10 +120,47 @@ export default {
                     border-bottom: 1px solid #dadada;
                 }
 
-                .content-select {
-                    height: 40px;
+                .content-box {
                     text-align: center;
-                    line-height: 40px;
+                    padding-top: 50px;
+
+                    .content-user,
+                    .content-password {
+                        height: 40px;
+                        margin: 20px 0;
+
+                        .user-img,
+                        .password-img{
+                            display: inline-block;
+                            width: 36px;
+                            height: 36px;
+                            padding: 1px;
+                            border: 1px solid rgba(206, 206, 206, .5);
+                            vertical-align: top;
+                            border-radius: 2px;
+                        }
+
+                        .user-img {
+                            background: url(../image/login/yh.png) no-repeat center;
+                        }
+
+                        .password-img {
+                            background: url(../image/login/mm.png) no-repeat center;
+                        }
+
+                        .content-input {
+                            width: 200px;
+                        }
+                    }
+                }
+
+                .content-btn {
+                    text-align: center;
+                    padding-top: 20px;
+
+                    .btn-login {
+                        width: 240px;
+                    }
                 }
             }
         }

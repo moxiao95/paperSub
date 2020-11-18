@@ -7,5 +7,6 @@
 <style lang="scss">
 	body {
 		margin: 0;
+		user-select: none;
 	}
 </style>
