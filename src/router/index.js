@@ -12,7 +12,7 @@ Vue.use(VueRouter);
 
 const routes = [
 	{
-		path: '/home',
+		path: '/',
 		name: 'Home',
 		component: Home,
 		children: [
@@ -29,7 +29,7 @@ const routes = [
 				component: Data,
 			},
 			{
-				path: 'Help',
+				path: 'help',
 				component: Help,
 			},
 		],

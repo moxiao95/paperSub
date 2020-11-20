@@ -67,7 +67,7 @@ export default {
             }
             localStorage.setItem('cookies', this.userInput);
             this.loadingState = false;
-            this.$router.push('/home');
+            this.$router.push('/');
         },
     },
 };

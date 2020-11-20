@@ -23,16 +23,16 @@
 					mode="horizontal"
 				>
 					<el-menu-item index="1">
-						<router-link to="/home" tag="span">首页</router-link>
+						<router-link to="/" tag="span">首页</router-link>
 					</el-menu-item>
 					<el-menu-item index="2">
-						<router-link to="/home/announcement" tag="span">通告中心</router-link>
+						<router-link to="/announcement" tag="span">通告中心</router-link>
 					</el-menu-item>
 					<el-menu-item index="3">
-						<router-link to="/home/data" tag="span">论文资料</router-link>
+						<router-link to="/data" tag="span">论文资料</router-link>
 					</el-menu-item>
 					<el-menu-item index="4">
-						<router-link to="/home/help" tag="span">帮助</router-link>
+						<router-link to="/help" tag="span">帮助</router-link>
 					</el-menu-item>
 				</el-menu>
 			</div>
