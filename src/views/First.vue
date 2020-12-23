@@ -32,7 +32,10 @@
             <header>
                 <i>{{index + 1}}</i>
                 <span>{{titleList[index].title}}</span>
-                <b v-if="titleList[index].see"></b>
+                <b
+                    v-if="titleList[index].see"
+                    @click="enterInfo(titleList[index].title)"
+                ></b>
             </header>
             <div>
                 <dl>
@@ -135,10 +138,33 @@ export default {
                     end: '2020-09-03',
                     state: 0,
                 },
-            ]
+            ],
         };
     },
-
+    
+    methods: {
+        enterInfo(data) {
+            switch (data) {
+                case '确定选题':
+                    this.$router.push({path: '/topic'});
+                    break;
+                case '初稿提交':
+                    this.$router.push({path: '/fpaper'});
+                    break;
+                case '终稿提交': 
+                    this.$router.push({path: '/lpaper'});
+                    break;
+                case '论文查重':
+                    this.$router.push({path: '/repeat'});
+                    break;
+                case '答辩安排':
+                    this.$router.push({path: '/defence'});
+                    break;
+                default:
+                    break;
+            };
+        },
+    },
 };
 </script>
 
