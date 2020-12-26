@@ -20,7 +20,7 @@ import FirstPaper from '../views/info/FirstPaper.vue';
 // 终稿页面
 import LastPaper from '../views/info/LastPaper.vue';
 // 查重页面
-import replace from '../views/info/replace.vue';
+import Repeat from '../views/info/Repeat.vue';
 // 答辩页面
 import Defence from '../views/info/Defence.vue';
 
@@ -28,58 +28,73 @@ Vue.use(VueRouter);
 
 const routes = [
 	{
-		path: '/',
+		path: '',
 		name: 'Home',
 		component: Home,
 		children: [
+			// 首页
 			{
 				path: '',
+				name: '',
 				component: First,
 			},
+			// 公告
 			{
 				path: 'announcement',
+				name: 'announcement',
 				component: Announcement,
 			},
+			// 数据
 			{
 				path: 'data',
+				name: 'data',
 				component: Data,
 			},
+			// 帮助
 			{
 				path: 'help',
+				name: 'help',
 				component: Help,
+			},
+			// 选题页面
+			{
+				path: '/topic',
+				name: 'Topic',
+				component: Topic,
+			},
+			// 初稿
+			{
+				path: '/fpaper',
+				name: 'FirstPaper',
+				component: FirstPaper,
+			},
+			// 终稿
+			{
+				path: '/lpaper',
+				name: 'LastPaper',
+				component: LastPaper,
+			},
+			// 查重
+			{
+				path: '/repeat',
+				name: 'Repeat',
+				component: Repeat,
+			},
+			// 答辩
+			{
+				path: '/defence',
+				name: 'Defence',
+				component: Defence,
 			},
 		],
 	},
-	{
-		path: '/topic',
-		name: 'Topic',
-		component: Topic,
-	},
-	{
-		path: '/fpaper',
-		name: 'FirstPaper',
-		component: FirstPaper,
-	},
-	{
-		path: '/lpaper',
-		name: 'LastPaper',
-		component: LastPaper,
-	},
-	{
-		path: '/repeat',
-		name: 'Repeat',
-		component: Repeat,
-	},
-	{
-		path: '/defence',
-		name: 'Defence',
-		component: Defence,
-	},
+	// 关于
 	{
 		path: '/about',
 		name: 'About',
 		component: About,
 	},
+	// 登录
 	{
 		path: '/login',
 		name: 'Login',
