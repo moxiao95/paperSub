@@ -8,9 +8,12 @@
             ></span>
         </header>
         <ul class="topic-info">
-            <li>
-                <span>1</span>
-                <p>2</p>
+            <li
+                v-for="item in topicInfoList"
+                :key="item.info"
+            >
+                <span>{{item.title}}：</span>
+                <p>{{item.info}}</p>
             </li>
         </ul>
     </div>
@@ -20,8 +23,105 @@
 export default {
     data() {
         return {
-            
-        }
+            topicInfoList: [
+                {
+                    title: '学习中心',
+                    info: '驻马店汉',
+                },
+                {
+                    title: '专业',
+                    info: '计算机',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+                {
+                    title: '学生姓名',
+                    info: '为',
+                },
+                {
+                    title: '通信地址',
+                    info: '实打实大所多',
+                },
+            ],
+        };
     },
 
     methods: {
@@ -37,7 +137,7 @@ export default {
     .topic {
         width: 70%;
         margin: 2% 15% 0;
-        height: 90%;
+        height: 700px;
         border-radius: 5px;
         background: rgb(255, 255, 255);
         box-shadow: 3px 3px 3px rgb(170, 169, 169);
@@ -64,13 +164,40 @@ export default {
             }
         }
 
-        .topic-list {
+        .topic-info {
             padding: 5px 20px;
+            height: 635px;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+				width: 3px;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: #d8d8d8;
+				border-radius: 10px;
+			}
+			&::-webkit-scrollbar-track-piece {
+				background: transparent;
+			}
 
             li {
                 height: 50px;
-                margin: 5px 0;
+                margin: 10px 0;
                 border-radius: 3px;
+
+                span {
+                    float: left;
+                    width: 30%;
+                    height: 50px;
+                    text-align: right;
+                }
+
+                p {
+                    float: right;
+                    width: 65%;
+                    height: 50px;
+                    margin: 0;
+                }
             }
         }
     }
