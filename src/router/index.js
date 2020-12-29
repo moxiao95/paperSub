@@ -8,6 +8,8 @@ import Login from '../views/Login.vue';
 import First from '../views/First.vue';
 // 通告
 import Announcement from '../views/Announcement.vue';
+// 公告详情
+import Announ from '../views/announ/Announ.vue';
 // 数据
 import Data from '../views/Data.vue';
 // 帮助
@@ -43,6 +45,12 @@ const routes = [
 				path: 'announcement',
 				name: 'announcement',
 				component: Announcement,
+			},
+			// 公告
+			{
+				path: 'announ',
+				name: 'announ',
+				component: Announ,
 			},
 			// 数据
 			{

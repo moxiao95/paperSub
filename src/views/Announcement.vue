@@ -56,6 +56,7 @@ export default {
     methods: {
         enterAnnouncementInfo({id}) {
             console.log(id);
+            this.$router.push({path: '/announ'});
         },
     },
 }
